@@ -3,6 +3,8 @@ using System.Collections;
 
 public class Spawner : MonoBehaviour {
 
+	public GameObject box_prefab;
+
 	// Use this for initialization
 	void Start () {
 	
@@ -11,8 +13,12 @@ public class Spawner : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
-		if(Input.GetKeyDown("space"))
-			transform.Translate(Vector3.up);
-		
+		if (Input.GetKeyDown ("space")) {
+			//Going up
+			transform.Translate (Vector3.up);
+			//Spawn box
+			Instantiate(box_prefab, transform.position, Quaternion.identity);
+		}
+
 	}
 }
