@@ -4,6 +4,7 @@ using System.Collections;
 public class Movement : MonoBehaviour {
 
 	public GameObject floor;
+    public GameObject gravityPoint;
 
 
     public float speed;
@@ -28,7 +29,9 @@ public class Movement : MonoBehaviour {
             dir = 1;
         
 		//Curve Movement
-		//transform.RotateAround(new Vector3(0,0,0), new Vector3(0,dir*20,0), speed);
+        transform.RotateAround(gravityPoint.transform.position, new Vector3(0, 0, dir * 90), speed);
+        //Pendular Movement
+        
         //Lineal Movement
 		transform.Translate(new Vector3(speed*dir,0,0));
 
