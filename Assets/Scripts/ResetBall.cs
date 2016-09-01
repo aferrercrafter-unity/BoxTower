@@ -18,6 +18,7 @@ public class ResetBall : MonoBehaviour {
         if (manager.start)
             if (old_position == transform.position)
             {
+                print("equal");
                 transform.TransformPoint(start_position);
             }
             else
